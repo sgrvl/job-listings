@@ -9,17 +9,21 @@ const Card = styled.div`
 	border-radius: 5px;
 	border-left: 5px solid hsl(180, 29%, 50%);
 	display: grid;
-	grid-template-columns: 0.5fr 1fr 1fr;
+	grid-template-columns: 100px 1fr 1fr;
 `;
 
 const Image = styled.img`
 	grid-column: 1/2;
 	width: 100%;
+	max-width: 100%;
 	height: auto;
 	object-fit: scale-down;
+	align-self: center;
+	padding: 0.5em;
 `;
 
 const CardText = styled.div`
+	margin-left: 0.5em;
 	grid-column: 2/3;
 `;
 
@@ -27,6 +31,7 @@ const Info = styled.ul`
 	padding: 0;
 	list-style: none;
 	display: flex;
+	font-size: 0.75em;
 
 	li {
 		padding-right: 0.5em;
