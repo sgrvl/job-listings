@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useFetchJobs from "./hooks/useFetchJobs";
-import Job from "./components/Job";
-import styled, { createGlobalStyle } from "styled-components";
+import Job from "./components/Card/Job";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 	* {
@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Spartan', sans-serif;
 	}
 `;
+
+const theme = {
+	main: "hsl(180, 29%, 50%)",
+};
 
 const Wrap = styled.div`
 	max-width: 1440px;
@@ -28,11 +32,13 @@ function App() {
 		<>
 			<GlobalStyle />
 			<Wrap>
-				{loading && <h1>loading...</h1>}
-				{error && <h1>error</h1>}
-				{jobs.map((job) => {
-					return <Job key={job.id} job={job} />;
-				})}
+				<ThemeProvider theme={theme}>
+					{loading && <h1>loading...</h1>}
+					{error && <h1>error</h1>}
+					{jobs.map((job) => {
+						return <Job key={job.id} job={job} />;
+					})}
+				</ThemeProvider>
 			</Wrap>
 		</>
 	);
