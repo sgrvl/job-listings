@@ -8,7 +8,8 @@ const ACTIONS = {
 };
 
 const BASE_URL =
-	"https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
+	"https://api.allorigins.win/raw?url=https://jobs.github.com/positions.json";
+//https://cors-anywhere.herokuapp.com/ //too many requests
 
 function reducer(state, action) {
 	switch (action.type) {

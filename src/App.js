@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useFetchJobs from "./hooks/useFetchJobs";
-import Job from "./components/Card/Job";
+import Job from "./components/Card/Card";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
 	main: "hsl(180, 29%, 50%)",
+	darkFont: "hsl(180, 14%, 20%)",
 };
 
 const Wrap = styled.div`
