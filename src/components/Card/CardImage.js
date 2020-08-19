@@ -9,6 +9,11 @@ const Image = styled.img`
 	object-fit: scale-down;
 	align-self: center;
 	padding: 0.5em;
+	@media screen and (max-width: 425px) {
+		height: 100px;
+		width: auto;
+		grid-row: 1/2;
+	}
 `;
 
 const CardImage = ({ job }) => {

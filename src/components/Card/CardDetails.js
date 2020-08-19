@@ -8,10 +8,15 @@ const Details = styled(ReactMarkdown)`
 
 const Wrap = styled.div`
 	grid-area: 2/1/3/4;
-	overflow: hidden;
+	text-overflow: "-";
+	overflow: hidden auto;
+	white-space: wrap;
 	height: 100%;
-	max-height: ${(props) => (props.display ? "2000px" : "0")};
+	max-height: ${(props) => (props.display ? "70vh" : "0")};
 	transition: max-height 0.3s linear;
+	@media screen and (max-width: 425px) {
+		grid-area: 3/1/4/4;
+	}
 `;
 
 const CardDetails = ({ job, display }) => {

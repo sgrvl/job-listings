@@ -15,14 +15,16 @@ const StyledCard = styled.div`
 	border-left: ${(props) =>
 		props.date < 3 ? `5px solid ${props.theme.main}` : "none"};
 	display: grid;
-	grid-template-columns: 100px 1fr 1fr;
-	grid-template-rows: auto auto;
+	grid-template: auto auto / 100px 1fr;
 	box-shadow: 0 5px 7px -7px rgba(0, 0, 0, 1);
 `;
 
 const CardText = styled.div`
 	margin-left: 0.5em;
 	grid-area: 1/2/2/3;
+	@media screen and (max-width: 425px) {
+		grid-area: 2/1/3/3;
+	}
 `;
 
 const JobTitle = styled.h3`
@@ -63,7 +65,6 @@ const Card = ({ job }) => {
 					<path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9 1.917-1.916z" />
 				)}
 			</Chevron>
-
 			<CardDetails job={job} display={open} />
 		</StyledCard>
 	);

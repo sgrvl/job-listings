@@ -14,6 +14,7 @@ const Link = styled.a`
 
 const New = styled.button`
 	font-weight: 700;
+	max-height: 2em;
 	color: white;
 	font-size: 0.6em;
 	background-color: ${(props) => props.theme.main};
@@ -22,7 +23,7 @@ const New = styled.button`
 	outline: none;
 	cursor: auto;
 	margin-left: 1em;
-	display: ${(props) => (props.date < 3 ? "block" : "none")};
+	display: ${(props) => (props.date < 2 ? "block" : "none")};
 `;
 
 const CardTitle = ({ date, job }) => {
